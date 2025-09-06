@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>淫夢バッジ診断</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      background: #f8f8f8;
+    }
+    img {
+      max-width: 300px;
+      margin: 20px auto;
+      display: block;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-screen">
+    <img src="main.png" alt="メイン画像">
+    <button onclick="showResult('nai')">（持って）ないです</button>
+    <button onclick="showResult('ari')">ありますねぇ！</button>
+  </div>
+
+  <div id="nai-screen" style="display:none;">
+    <img src="nai.png" alt="ない画像">
+    <button onclick="goBack()">戻る</button>
+  </div>
+
+  <div id="ari-screen" style="display:none;">
+    <img src="ari.png" alt="ある画像">
+    <button onclick="goBack()">戻る</button>
+  </div>
+
+  <script>
+    function showResult(type) {
+      document.getElementById("main-screen").style.display = "none";
+      document.getElementById(type + "-screen").style.display = "block";
+    }
+
+    function goBack() {
+      document.getElementById("nai-screen").style.display = "none";
+      document.getElementById("ari-screen").style.display = "none";
+      document.getElementById("main-screen").style.display = "block";
+    }
+  </script>
+</body>
+</html>
